@@ -60,21 +60,10 @@ void CString::plus(char chaine[]){
 	str = new char[strlen(nouvelle) + strlen(chaine) + 1];
 	strcat(str, nouvelle);
 	strcat(str, chaine);
-	m_nbChaines += 1;
 
 }
 
 bool CString::plusGrandQue(CString &cible){
-	
-	int a = strlen(str);
-	int b = strlen(cible.getChaine());
-	
-	if (a > b) return true;
-	else return false;
-	
-}
-
-bool CString::InfOuEgal(CString &cible){
 	
 	char alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z'};
 	
@@ -85,9 +74,29 @@ bool CString::InfOuEgal(CString &cible){
 	}
 		
 	return -1;
+	
 }
 
+bool CString::InfOuEgal(CString &cible){
+	
+	char alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z'};
+	
+	for(int i(0); i<26; ++i){
+		if ((str[i] == alphabet[i]) && (cible.getChaine() [i] == alphabet[i])) continue;
+		else if((str[i] == alphabet[i]) && (cible.getChaine() [i] != alphabet[i])) return false;
+		else if((str[i] != alphabet[i]) && (cible.getChaine() [i] == alphabet[i])) return true;
+	}
+		
+	return true;
+}
 
+bool CString::PlusGrand(CString &cible){
+	int a = strlen(str);
+	int b = strlen(cible.getChaine());
+	
+	if (a > b) return true;
+	else return false;
+}
 
 
 
