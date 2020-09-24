@@ -10,3 +10,8 @@ exercice6.o: exercice6.cpp CString.h
 CString.o: CString.cpp CString.h
 	g++ -c CString.cpp CString.h
 	
+clear:
+	rm *.o
+	rm *.h.gch
+	rm exercice6
+	
