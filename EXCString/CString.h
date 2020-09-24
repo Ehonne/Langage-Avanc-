@@ -16,10 +16,12 @@ class CString{
 	CString(char c);
 	CString(char *chaine);
 	CString(CString &cible);
+	//~CString();  // destructeur
 	
 	// Méthodes :
 	void affiche_chaine() const;
 	void plus(char chaine[]);
+	void setChaine(char chaine[]);
 	char* getChaine() const;
 	bool plusGrandQue(CString &cible);
 	bool InfOuEgal(CString &cible);

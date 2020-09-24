@@ -23,12 +23,25 @@ CString::CString(char chaine[]){
 }
 
 
+CString::CString(CString &cible){
+	str = new char[strlen(cible.getChaine()) + 1];
+	str = cible.getChaine();
+}
+
+
+
+/******** METHODE ********************/
 void CString::affiche_chaine() const{
 	cout << str << endl;
 }
 
 char* CString::getChaine() const{
 	return str;
+}
+
+void CString::setChaine(char chaine[]){
+	str = new char[strlen(chaine) + 1];
+	str = chaine;	
 }
 
 
