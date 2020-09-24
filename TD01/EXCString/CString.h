@@ -1,21 +1,23 @@
-#include <iostream>
-#include <cstdlib>
-#include <string.h>
+#ifndef DEF_CSTRING
+#define DEF_CSTRING
+
 using namespace std;
 
 
 class CString {
 	private: 
-		int nbr_car;
 		char *chaine;	//Chaine de carac
 	
 	public:
+		int nbr_chaine = 0;
 		CString();
 		CString(char Chaine);
 		CString(char *Chaine);
-		~CString();					//Destructeur
-		getString();
-		plusGrandQue(char *Chaine);
-		infOuEgale(char *Chaine);
-}
-
+		//~CString();	//Destructeur				
+		char *getString();
+		int nbrChaines();
+		bool plusGrandQue(CString &Chaine);
+		bool infOuEgale(CString &Chaine);
+		char* plus(char *Chaine);
+};
+#endif
