@@ -1,0 +1,9 @@
+
+# les executables 
+.exe
+
+.o
+
+.h.gch
+
+bin
