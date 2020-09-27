@@ -78,27 +78,59 @@ void CString::plus(char chaine[]){
 
 bool CString::plusGrandQue(CString &cible){
 	
+	int cpt(0), cpt2(0), j(0);
 	char alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z'};
 	
 	for(int i(0); i<26; ++i){
-		if ((str[i] == alphabet[i]) && (cible.getChaine() [i] == alphabet[i])) continue;
-		else if((str[i] == alphabet[i]) && (cible.getChaine() [i] != alphabet[i])) return true;
-		else if((str[i] != alphabet[i]) && (cible.getChaine() [i] == alphabet[i])) return false;
+		if (str[i] == cible.getChaine() [i]) continue;
+		else if(str[i] != cible.getChaine() [i]){
+			while(str[i] != alphabet[j]){
+				cpt++;
+				j++;
+			}
+			j = 0;
+			
+			while(cible.getChaine() [i] != alphabet[j]){
+				cpt2++;
+				j++;
+			}
+			j = 0;
+			
+			if (cpt > cpt2) return false;
+			else return true;
+		}
 	}
 		
-	return -1;
+	return false;
 	
 }
 
 bool CString::InfOuEgal(CString &cible){
 	
+	int cpt(0), cpt2(0), j(0);
 	char alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q','r','s','t','u','v','w','x','y','z'};
 	
 	for(int i(0); i<26; ++i){
-		if ((str[i] == alphabet[i]) && (cible.getChaine() [i] == alphabet[i])) continue;
-		else if((str[i] == alphabet[i]) && (cible.getChaine() [i] != alphabet[i])) return false;
-		else if((str[i] != alphabet[i]) && (cible.getChaine() [i] == alphabet[i])) return true;
+		if (str[i] == cible.getChaine() [i]) continue;
+		else if(str[i] != cible.getChaine() [i]){
+			while(str[i] != alphabet[j]){
+				cpt++;
+				j++;
+			}
+			j = 0;
+			
+			while(cible.getChaine() [i] != alphabet[j]){
+				cpt2++;
+				j++;
+			}
+			j = 0;
+			
+			if (cpt > cpt2) return true;
+			else return false;
+		}
 	}
+	
+	
 		
 	return true;
 }
