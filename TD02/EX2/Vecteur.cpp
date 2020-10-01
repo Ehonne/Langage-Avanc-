@@ -62,5 +62,18 @@ int& Vecteur::element(int i){
 	return m_set[i];
 }
 
+int* Vecteur::ajoutElement(int i){
+		
+	int *T = new int[m_dim + 1];
+	for (int i(0); i<m_dim ; ++i){
+		T[i] = m_set[i];
+	}
+	T[m_dim] = i;
+	
+	return T;
+}
 
+void Vecteur::ajoutElementInterne(int i){
+	m_set = this->ajoutElement(i);
+}
 
