@@ -16,7 +16,15 @@ int main(){
 	Vecteur V3(V1);
 	cout << "V3 : ";
 	V3.afficherTab();
-	
+
+        int TAB[5];
+        for (int i = 0; i < 5; i++)
+        {
+            TAB[i] = rand() %10;
+        }
+        Vecteur V4(TAB,5);
+        cout << "V4 : ";
+        V4.afficherTab();
 
 	
 	
