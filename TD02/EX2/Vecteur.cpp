@@ -72,7 +72,7 @@ int& Vecteur::element(int i){
 
 
 void Vecteur::ajoutElement(int i){
-	//this->setDim(this->m_dim + 1);
+	
 	
 	int *T = new int[m_dim + 1];
 	for (int i(0); i<m_dim ; ++i){
@@ -80,8 +80,10 @@ void Vecteur::ajoutElement(int i){
 	}
 	T[m_dim] = i;
 	
-	m_set = new int[m_dim + 1];
-	for (int i(0); i<m_dim+1 ; ++i){
+	
+	this->setDim(this->m_dim + 1);
+	m_set = new int[m_dim];
+	for (int i(0); i<m_dim ; ++i){
 		m_set[i] = T[i];
 	}
 	delete[] T;
