@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "CString.h"
+#include "Definition.h"
 using namespace std;
 
 int main()
@@ -8,7 +9,9 @@ int main()
 	CString s1( "toto" ),
 	s2( 'q' ),
 	s3 ;
-
+	
+	cout << s1.getString() << endl;
+	cout << s2.getString() << endl;
 	//cout << "nbrChaines" << CString::nbrChaines() << endl ;
 	//afficher le nombre de chaines créées
 	s3 = s1.plus( "w" ) ;
@@ -18,4 +21,8 @@ int main()
 	if( s1.infOuEgale(s2) ) // si s1 <= s2 au sens alphabétique
 		cout << "plus petit" << endl ;
 	s3 = s1.plusGrandQue( s2 ) ;// retourner s1 si s1>s2, s2 sinon
+	
+	Definition homer( "Homer", "Buveur de biere" ) ;
+	cout<<"la definition du mot "<< homer.getClef()<<" est "<<
+	homer.getDef() << endl ;
 } 
