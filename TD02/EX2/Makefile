@@ -12,5 +12,5 @@ Vecteur.o: Vecteur.cpp Vecteur.h
 
 clean:
 	rm *.o
-	rm *.gch
+	rm *.h.gch
 	rm main

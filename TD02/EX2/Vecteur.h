@@ -22,7 +22,10 @@ class Vecteur{
 	void afficherTab() const;
 	int& element(int i);
 	void ajoutElement(int i);
+	void Plus(Vecteur const& cible);
+	
 	/***** SURCHARGE D'OPERATEURS   ********/
+	void operator +=(Vecteur const& cible);
 	
 	
 };

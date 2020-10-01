@@ -29,8 +29,22 @@ int main(){
 	
 	
 	V1.ajoutElement(1);
+	cout << "V1 après ajout : ";
 	V1.afficherTab();
 	
+	
+	V2.Plus(V4);
+	cout << "V2 apres addition de lui-même avec V4 : ";
+	V2.afficherTab();
+	
+	
+	// test Surcharge des opérateurs :
+	Vecteur V5(3);
+	cout << "V5 : ";
+	V5.afficherTab();
+	V5 += V1;
+	cout << "V5 += V1  : ";
+	V5.afficherTab();
 	
 	
 	return 0;

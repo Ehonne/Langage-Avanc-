@@ -72,8 +72,6 @@ int& Vecteur::element(int i){
 
 
 void Vecteur::ajoutElement(int i){
-	
-	
 	int *T = new int[m_dim + 1];
 	for (int i(0); i<m_dim ; ++i){
 		T[i] = m_set[i];
@@ -89,3 +87,28 @@ void Vecteur::ajoutElement(int i){
 	delete[] T;
 }
 
+void Vecteur::Plus(Vecteur const& cible){
+	int *nouveau = new int[this->m_dim + cible.getDim()];
+	int j(0);
+	
+	for(int i(0); i < this->m_dim; ++i){
+		nouveau[i] = this->m_set[i];
+	}
+	
+	for(int i(m_dim); i < cible.getDim()+this->m_dim; ++i){
+		nouveau[i] = cible.getTableau() [j];
+		j++;
+	}
+	
+	this->setDim(this->m_dim + cible.getDim());
+	this->m_set = new int[m_dim];
+	for (int i(0); i<m_dim ; ++i){
+		m_set[i] = nouveau[i];
+	}
+	delete[] nouveau;
+}
+
+/****  SURCHARGE DES OPERATEURS    *************/
+void Vecteur::operator +=(Vecteur const& cible){
+	this->Plus(cible);
+}
