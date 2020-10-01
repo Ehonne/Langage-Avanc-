@@ -28,5 +28,11 @@ int main(){
 	cout << " 2ème entier de V1 : " << V1.element(1) << endl;
 	
 	
+	V1.ajoutElement(10);
+	cout << "V1 : ";
+	V1.afficherTab();
+	
+	
+	
 	return 0;
 }

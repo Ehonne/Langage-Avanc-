@@ -49,6 +49,10 @@ int Vecteur::getDim() const{
 	return m_dim;
 }
 
+void Vecteur::setDim(int taille){
+	this->m_dim = taille;
+}
+
 int* Vecteur::getTableau() const{
 	int *T = new int[m_dim];
 	T = m_set;
@@ -66,18 +70,20 @@ int& Vecteur::element(int i){
 	return m_set[i];
 }
 
-int* Vecteur::ajoutElement(int i){
-		
+
+void Vecteur::ajoutElement(int i){
+	//this->setDim(this->m_dim + 1);
+	
 	int *T = new int[m_dim + 1];
 	for (int i(0); i<m_dim ; ++i){
 		T[i] = m_set[i];
 	}
 	T[m_dim] = i;
 	
-	return T;
-}
-
-void Vecteur::ajoutElementInterne(int i){
-	m_set = this->ajoutElement(i);
+	m_set = new int[m_dim + 1];
+	for (int i(0); i<m_dim+1 ; ++i){
+		m_set[i] = T[i];
+	}
+	delete[] T;
 }
 

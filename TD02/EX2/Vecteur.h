@@ -17,11 +17,11 @@ class Vecteur{
 	
 	// Méthodes :
 	int getDim() const;
+	void setDim(int taille);
 	int* getTableau() const;
 	void afficherTab() const;
 	int& element(int i);
-	void ajoutElementInterne(int i);
-	int* ajoutElement(int i);
+	void ajoutElement(int i);
 	/***** SURCHARGE D'OPERATEURS   ********/
 	
 	
