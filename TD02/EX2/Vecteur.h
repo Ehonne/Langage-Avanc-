@@ -19,6 +19,7 @@ class Vecteur{
 	int getDim() const;
 	int* getTableau() const;
 	void afficherTab() const;
+	int & element(int i);
 	
 	/***** SURCHARGE D'OPERATEURS   ********/
 	

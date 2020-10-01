@@ -11,8 +11,7 @@ int main(){
 	V1.afficherTab();
 	cout << "V2 : ";
 	V2.afficherTab();
-	
-	
+
 	Vecteur V3(V1);
 	cout << "V3 : ";
 	V3.afficherTab();
@@ -26,7 +25,8 @@ int main(){
         cout << "V4 : ";
         V4.afficherTab();
 
-	
-	
+	cout << " 2ème entier de V1 : " << V1.element(1) << endl;
+
+
 	return 0;
 }
