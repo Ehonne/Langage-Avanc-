@@ -25,7 +25,7 @@ int main(){
         cout << "V4 : ";
         V4.afficherTab();
 
-	cout << " 2ème entier de V1 : " << V1.element(1) << endl;
+        cout << "2ème entier de V4 : " << V4.element(1) << endl;
 
 
 	return 0;
