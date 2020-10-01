@@ -12,13 +12,6 @@ int main(){
 	cout << "V2 : ";
 	V2.afficherTab();
 	
-	
-	Vecteur V3(V1);
-	cout << "V3 : ";
-	V3.afficherTab();
-	
 
-	
-	
 	return 0;
 }
