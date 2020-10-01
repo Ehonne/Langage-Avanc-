@@ -5,13 +5,13 @@ class Vecteur{
 	// Attributs :
 	private:
 	int *m_set;
-	int m_dim;
+        int m_dim;      //Dimansion
 	
 	public:
 	// Constructeurs :
 	Vecteur();
 	Vecteur(int dimension);
-	Vecteur(int tableau[], int taille);
+        Vecteur(int *tableau, int taille);
 	Vecteur(Vecteur const& cible);
 	~Vecteur(); // destructeur
 	

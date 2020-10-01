@@ -24,10 +24,14 @@ Vecteur::Vecteur(Vecteur const& cible){
 	m_set = cible.getTableau();
 }
 
-Vecteur::Vecteur(int tableau[], int taille){
+Vecteur::Vecteur(int *tableau, int taille){
 	m_dim = taille;
 	m_set = new int[m_dim];
-	m_set = tableau;
+        for(int i =0; i < taille; i++)
+        {
+            m_set[i] = tableau[i];
+
+        }
 }
 
 
