@@ -12,6 +12,8 @@ int main(){
 	cout << "V2 : ";
 	V2.afficherTab();
 	
+	
+	cout << " 2ème entier de V1 : " << V1.element(1) << endl;
 
 	return 0;
 }

@@ -34,7 +34,10 @@ Vecteur::Vecteur(int tableau[], int taille){
 // Destructeur :
 Vecteur::~Vecteur(){
 	delete[] m_set;
+	*m_set = 0;
 }
+
+
 
 
 /******    METHODES   *******/
@@ -53,6 +56,10 @@ void Vecteur::afficherTab() const{
 		cout << m_set[i] << " ";
 	}
 	cout << endl;
+}
+
+int& Vecteur::element(int i){
+	return m_set[i];
 }
 
 
