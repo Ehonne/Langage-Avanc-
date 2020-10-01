@@ -3,6 +3,9 @@
 #include "Point.h"
 
 
+// Mettre des <double> au lieu des <int>
+
+
 using namespace std;
 
 Point::Point() : m_posX(0), m_posY(0)
@@ -16,6 +19,7 @@ Point::Point(int x, int y) : m_posX(x), m_posY(y)
 }
 
 Point::Point(Point &cible){
+	// On peut aussi ecrire this->m_posX = cible.getX(); et this->m_posY() = cible.getY();
 	m_posX = cible.getX();
 	m_posY = cible.getY();
 }

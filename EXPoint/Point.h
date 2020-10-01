@@ -15,6 +15,7 @@ class Point{
 	Point(int x, int y);
 	Point(Point &cible);
 	
+	// rajouter une méthode void cloner(Point& p);
 	void afficher() const;
 	void setposX(int x);
 	void setposY(int y);
