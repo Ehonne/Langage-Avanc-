@@ -9,6 +9,8 @@ int main(){
 	
 	CString s1("toto"), s2('q'), s3;
 	
+	cout << "nbrChaines :" << CString::nbrChaines() << endl;
+	
 	cout << "s1 : ";
 	s1.affiche_chaine();
 	cout << endl;

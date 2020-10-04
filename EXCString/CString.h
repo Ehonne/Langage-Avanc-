@@ -6,8 +6,7 @@ class CString{
 	private:
 	char *str;
 	int m_nbChaines;
-	
-	
+	static int compteur;
 	
 	
 	public:
@@ -26,6 +25,9 @@ class CString{
 	bool plusGrandQue(CString &cible);
 	bool InfOuEgal(CString &cible);
 	bool PlusGrand(CString &cible);
+	
+	// Methode statique :
+	static int nbrChaines();
 		
 };
 

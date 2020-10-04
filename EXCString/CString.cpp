@@ -4,9 +4,12 @@
 
 using namespace std;
 
+int CString::compteur = 0;
+
 CString::CString(){
 	str = new char[1];
 	m_nbChaines = 0;
+	++compteur;
 }
 
 CString::CString(char c){
@@ -14,20 +17,28 @@ CString::CString(char c){
 	str[0] = c;
 	str[1] = 0;
 	m_nbChaines = 1;
+	++compteur;
 }
 
 CString::CString(char chaine[]){
 	str = new char[strlen(chaine)+1];
 	str = chaine;
 	m_nbChaines = 1;
+	++compteur;
 }
 
 
 CString::CString(CString &cible){
 	str = new char[strlen(cible.getChaine()) + 1];
 	str = cible.getChaine();
+	++compteur;
 }
+/***************************************/
 
+//Methode statique :
+int CString::nbrChaines(){
+	return compteur;
+}
 
 
 /******** METHODE ********************/
