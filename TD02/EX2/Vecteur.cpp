@@ -112,3 +112,15 @@ void Vecteur::Plus(Vecteur const& cible){
 void Vecteur::operator +=(Vecteur const& cible){
 	this->Plus(cible);
 }
+
+bool Vecteur::operator ==(Vecteur const& cible) const{
+	if (this->m_dim != cible.getDim()) return false;
+	else {
+		for(int i(0); i<m_dim; ++i){
+			if(this->m_set[i] != cible.getTableau() [i]) return false;
+		}
+	}
+	return true;
+}
+
+

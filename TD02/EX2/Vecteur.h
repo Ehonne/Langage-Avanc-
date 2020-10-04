@@ -5,7 +5,7 @@ class Vecteur{
 	// Attributs :
 	private:
 	int *m_set;
-        int m_dim;      //Dimansion
+    int m_dim;      //Dimension
 	
 	public:
 	// Constructeurs :
@@ -26,7 +26,8 @@ class Vecteur{
 	
 	/***** SURCHARGE D'OPERATEURS   ********/
 	void operator +=(Vecteur const& cible);
-	
+	bool operator ==(Vecteur const& cible) const;
+	Vecteur operator [](Vecteur const& cible);
 	
 };
 #endif
