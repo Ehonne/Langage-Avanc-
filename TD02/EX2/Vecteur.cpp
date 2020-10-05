@@ -37,8 +37,7 @@ Vecteur::Vecteur(int *tableau, int taille){
 
 // Destructeur :
 Vecteur::~Vecteur(){
-	delete[] m_set;
-	*m_set = 0;
+	delete [] m_set;
 }
 
 
