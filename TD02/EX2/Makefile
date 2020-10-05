@@ -10,7 +10,7 @@ main.o: main.cpp Vecteur.h
 Vecteur.o: Vecteur.cpp Vecteur.h
 	g++ -c Vecteur.cpp Vecteur.h
 
-clean:
+clear:
 	rm *.o
 	rm *.h.gch
 	rm main
