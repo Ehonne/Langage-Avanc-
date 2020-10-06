@@ -1,15 +1,14 @@
 run:	main
 	./main
 	rm *.o
-	rm *.h.gch
 	rm main
 	
-main: main.o CString.o CString.h
-	g++ -o main main.o CString.o CString.h
+main: main.o CString.o 
+	g++ -o main main.o CString.o
 	
-main.o: main.cpp CString.h
-	g++ -c main.cpp CString.h
+main.o: main.cpp 
+	g++ -c main.cpp
 	
-CString.o: CString.cpp CString.h
-	g++ -c CString.cpp CString.h
+CString.o: CString.cpp
+	g++ -c CString.cpp
 	

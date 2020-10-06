@@ -4,9 +4,12 @@
 
 using namespace std;
 
+int CString::compteur = 0;
+
 CString::CString(){
 	str = new char[1];
 	m_nbChaines = 0;
+	++compteur;
 }
 
 CString::CString(char c){
@@ -14,23 +17,36 @@ CString::CString(char c){
 	str[0] = c;
 	str[1] = 0;
 	m_nbChaines = 1;
+	++compteur;
 }
 
-CString::CString(char chaine[]){
+CString::CString(const char chaine[]){
 	str = new char[strlen(chaine)+1];
-	str = chaine;
+	strcpy(str, chaine);
 	m_nbChaines = 1;
+	++compteur;
 }
 
 
 CString::CString(CString const& cible){
 	str = new char[strlen(cible.getChaine()) + 1];
-	str = cible.getChaine();
+	strcpy(str, cible.getChaine());
+	++compteur;
+}
+
+//Destructeur :
+CString::~CString(){
+	//
+	--compteur;
 }
 
 
-
 /******** METHODE ********************/
+int CString::getNbrChaine(){
+	return compteur;
+}
+
+
 void CString::affiche_chaine() const{
 	cout << str << endl;
 }
@@ -40,12 +56,16 @@ char* CString::getChaine() const{
 }
 
 void CString::setChaine(char chaine[]){
+	delete [] str;
 	str = new char[strlen(chaine) + 1];
 	str = chaine;	
 }
 
 
 void CString::plus(char chaine[]){
+	
+	
+	
 	
 	// Ancienne methode (sans strlen()) :
 	/*
@@ -62,16 +82,16 @@ void CString::plus(char chaine[]){
 	 *	str = new char[strlen(chaine)+1];
 	 *	str = nouvelle;
 	 */
-	 
-	 
 	// Ici on definit la taille de "nouvelle" qui sera la taille des deux chaines ajoutées
 	
 	char *nouvelle = new char[strlen(str) + 1];
-	nouvelle = str;
+	strcpy(nouvelle, str);
+	
+	delete [] str;
 	
 	// On fait la même chose sur str , et on concatene les chaines dans str :
 	str = new char[strlen(nouvelle) + strlen(chaine) + 1];
-	strcat(str, nouvelle);
+	strcpy(str, nouvelle);
 	strcat(str, chaine);
 
 }
@@ -179,4 +199,37 @@ CString CString::operator +(CString const& cible){
 	S = this->Plus(cible.getChaine());
 	return S;
 }
+
+
+/* Deuxieme methode pour le surcharge de + :
+ * CString operator + (CString cible1, CString cible2)
+ * 
+ * mais on ne choisit qu'une methode, pas les deux en même temps !
+ */
+
+
+
+
+// Ajouter la surcharge  :  CString& CString::operator=(CSring& s)
+ 
+ 
+ // le & devant le char permet de retourner une référence, et donc on peut ecrire dans
+ // le main : S1[1] = 'a'   !!!
+ char& CString::operator [](unsigned i){
+	 unsigned size(0); // un attribut de la classe CString, qui représente la taille de la chaîne.
+	 if (i> size){
+		 cout << endl << "Index out of range" << endl;
+		 exit(1);
+	 }
+	 else return str[i-1];
+ }
+ 
+ 
+ /**** les methodes pour cout : *******/
+
+ 
+ 
+ 
+ 
+ 
 
