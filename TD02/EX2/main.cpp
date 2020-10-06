@@ -24,9 +24,23 @@ int main(){
         Vecteur V4(TAB,5);
         cout << "V4 : ";
         V4.afficherTab();
-
-	cout << " 2ème entier de V1 : " << V1.element(1) << endl;
 	
+	//test operateur [] :
+	cout << "2eme élément de V1 : ";
+	cout << V1[2] << endl;
+	// test operateur = :
+	V1 = V4;
+	cout << "V1 = V4, V1 est mtn : ";
+	V1.afficherTab();
+	//test operateur + :
+	Vecteur u = V1 + V4;
+	cout << "Vecteur u = V1 + V4 : ";
+	u.afficherTab();
+	
+	
+	V2 += V4;
+	cout << "V2 += V4 : ";
+	V2.afficherTab();
 	
 	return 0;
 }
